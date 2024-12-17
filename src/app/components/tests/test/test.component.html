@@ -1,0 +1,14 @@
+<!-- <h1 [ngStyle]="{'color':textColor,'font-size.px':fontSize}">
+    Liste de langages de programation.
+</h1>
+
+<ul>
+    <li  *ngFor="let language of languages; let i = index" (click)="selectedLanguage = language" class="hover:cursor-pointer hover:text-gray-400">
+       {{i + 1}} - {{language}}
+    </li>
+</ul> -->
+
+<app-affiche-liste-languages [listeLanguages]="languages" (sendValue)="recupValue($event)"  ></app-affiche-liste-languages>
+
+<app-affiche-details-language [selectedLanguage]="selectedLanguage"></app-affiche-details-language>
+  

@@ -1,0 +1,29 @@
+<div class="flex justify-center mb-6 mt-6">
+    <table>
+        <thead>
+            <tr>
+                <th>Statut</th>
+                <th>N°</th>
+                <th>Nom du langage</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let language of listeLanguages;let i = index">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>{{i+1}}</td>
+                <td class="hover:cursor-pointer" (click)="selectLanguage(language)">
+                    <span [ngClass]="{
+                        'font-bold text-green-600' : selectedLanguage === language,
+                        'text-gray-500' : selectedLanguage !== language
+                      }" >
+                        {{ language }}
+                      </span>
+                </td>
+                <td>supprimer</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

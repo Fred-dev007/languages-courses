@@ -1,0 +1,13 @@
+<div [ngSwitch]="selectedLanguage" class="p-2 text-center border" [ngStyle]="{'font-size.px':fontSizetext}">
+    <div *ngSwitchCase="'TypeScript'">TypeScript est un sur-ensemble typé de JavaScript.</div>
+    <div *ngSwitchCase="'Swift'">Swift est un langage de programmation pour iOS et macOS.</div>
+    <div *ngSwitchCase="'Kotlin'">Kotlin est utilisé principalement pour le développement Android.</div>
+    <div *ngSwitchCase="'Go (Golang)'">Go est connu pour sa simplicité et ses performances.</div>
+    <div *ngSwitchCase="'Ruby'">Ruby est souvent utilisé dans le développement web avec Rails.</div>
+    <div *ngSwitchCase="'PHP'">PHP est largement utilisé pour le développement web côté serveur.</div>
+    <div *ngSwitchCase="'C++'">C++ est un langage orienté objet très performant.</div>
+    <div *ngSwitchCase="'Java'">Java est utilisé dans une variété d'applications, y compris Android.</div>
+    <div *ngSwitchCase="'Python'">Python est connu pour sa simplicité et sa lisibilité.</div>
+    <div *ngSwitchCase="'JavaScript'">JavaScript est essentiel pour le développement web moderne.</div>
+    <div *ngSwitchDefault>Sélectionnez un langage pour en savoir plus.</div>
+  </div>

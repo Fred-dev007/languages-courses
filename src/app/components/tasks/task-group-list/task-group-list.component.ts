@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TASKGROUPSLIST } from '../../../data/taskGroupsList';
+import { TaskGroups } from '../../../models/task-groups';
+import { TaskGroupsListService } from '../../../service/task-groups-list.service';
 
 @Component({
   selector: 'app-task-group-list',
@@ -8,6 +10,14 @@ import { TASKGROUPSLIST } from '../../../data/taskGroupsList';
   templateUrl: './task-group-list.component.html',
   styleUrl: './task-group-list.component.css'
 })
-export class TaskGroupListComponent {
-  list=TASKGROUPSLIST
+export class TaskGroupListComponent implements OnInit {
+  taskGroupList:TaskGroups[]=[];
+
+  constructor(private TaskGroupsListService: TaskGroupsListService){}
+
+  ngOnInit(): void {
+    this.taskGroupList = this.TaskGroupsListService.getTaskGroupList()
+  }
+
+
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { TaskGroupListComponent } from './components/tasks/task-group-list/task-
 import { TestComponent } from './components/tests/test/test.component';
 import { AfficheListeLanguagesComponent } from './components/tests/affiche-liste-languages/affiche-liste-languages.component';
 import { AfficheDetailsLanguageComponent } from './components/tests/affiche-details-language/affiche-details-language.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { AfficheDetailsLanguageComponent } from './components/tests/affiche-deta
     TaskGroupListComponent,
     TestComponent,
     AfficheListeLanguagesComponent,
-    AfficheDetailsLanguageComponent
+    AfficheDetailsLanguageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

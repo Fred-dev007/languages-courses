@@ -3,12 +3,16 @@ import { MainContentComponent } from "./components/layout/main-content/main-cont
 import { LoginFormComponent } from "./components/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./components/auth/register-form/register-form.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { GamesComponent } from "./components/games/games.component";
+import { FifaComponent } from "./components/games/fifa/fifa.component";
+import { GodOfWarsComponent } from "./components/games/god-of-wars/god-of-wars.component";
 
 
 const routes: Routes = [
   {
     path:"",
-    component:MainContentComponent
+    component:MainContentComponent,
+    
   },
   {
     path:"login",
@@ -17,6 +21,20 @@ const routes: Routes = [
   {
     path:"register",
     component:RegisterFormComponent
+  },
+  {
+    path:'game',
+    component:GamesComponent,
+    children:[
+        {
+            path:"fifa",
+            component:FifaComponent
+        },
+        {
+            path:"gow",
+            component:GodOfWarsComponent
+        }
+    ]
   },
   {
     path:"**",

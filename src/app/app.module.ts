@@ -18,6 +18,9 @@ import { TestComponent } from './components/tests/test/test.component';
 import { AfficheListeLanguagesComponent } from './components/tests/affiche-liste-languages/affiche-liste-languages.component';
 import { AfficheDetailsLanguageComponent } from './components/tests/affiche-details-language/affiche-details-language.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { GamesComponent } from './components/games/games.component';
+import { FifaComponent } from './components/games/fifa/fifa.component';
+import { GodOfWarsComponent } from './components/games/god-of-wars/god-of-wars.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     TestComponent,
     AfficheListeLanguagesComponent,
     AfficheDetailsLanguageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GamesComponent,
+    FifaComponent,
+    GodOfWarsComponent,
+    
   ],
   imports: [
     BrowserModule,

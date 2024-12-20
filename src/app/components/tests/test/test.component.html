@@ -11,4 +11,11 @@
 <app-affiche-liste-languages [listeLanguages]="languages" (sendValue)="recupValue($event)"  ></app-affiche-liste-languages>
 
 <app-affiche-details-language [selectedLanguage]="selectedLanguage"></app-affiche-details-language>
-  
+<p>{{12300000005 | currency:'EUR' }}</p>
+<p>{{6-8-2000 | date }}</p>
+<p>{{'My GEEEEEE' | lowercase}}</p>
+<h2>Exemples d'utilisation du pipe date</h2>
+<ul>
+  <li>Date courte : {{34213654646 | date:'fullDate' }}</li>
+ 
+</ul>

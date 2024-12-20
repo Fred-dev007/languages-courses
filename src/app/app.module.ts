@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,9 @@ import { TestComponent } from './components/tests/test/test.component';
 import { AfficheListeLanguagesComponent } from './components/tests/affiche-liste-languages/affiche-liste-languages.component';
 import { AfficheDetailsLanguageComponent } from './components/tests/affiche-details-language/affiche-details-language.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CustomPipe } from './custom.pipe';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,24 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     TestComponent,
     AfficheListeLanguagesComponent,
     AfficheDetailsLanguageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CustomPipe,
+    UserListComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
+    
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(
+      withFetch(),
+    ),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,43 +4,93 @@
         <h3 class="text-xl font-semibold uppercase">
             Merci d'entrer vos informations pour votre inscription
         </h3>
-        
+
     </div>
 
     <div class="p-6 space-y-6">
-        <form action="#">
+        <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
             <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
                     <label for="nom" class="text-sm font-medium text-gray-900 block mb-2">Nom</label>
-                    <input type="text" name="nom" id="nom" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Merci d'entrez votre nom" required>
+                    <input formControlName="nom" type="text" name="nom" id="nom"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                        placeholder="Merci d'entrez votre nom" required>
+                    <small *ngIf="inscriptionForm.get('nom')?.invalid && inscriptionForm.get('nom')?.touched"
+                        class="text-red-500">
+                        Nom requis (minimum 2 caractères).
+                    </small>
+
                 </div>
                 <div class="col-span-6 sm:col-span-3">
                     <label for="prenom" class="text-sm font-medium text-gray-900 block mb-2">Prénoms</label>
-                    <input type="text" name="prenom" id="prenom" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Entrez votre(vos) prénom(s)" required>
+                    <input formControlName="prenom" type="text" name="prenom" id="prenom"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                        placeholder="Entrez votre(vos) prénom(s)" required>
+                    <small *ngIf="inscriptionForm.get('prenom')?.invalid && inscriptionForm.get('prenom')?.touched"
+                        class="text-red-500">
+                        Prenom requis (minimum 2 caractères).
+                    </small>
+
                 </div>
                 <div class="col-span-6 sm:col-span-3">
                     <label for="brand" class="text-sm font-medium text-gray-900 block mb-2">Adresse mail</label>
-                    <input type="text" name="brand" id="brand" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Adresse mail" required>
+                    <input formControlName="email" type="text" name="email" id="brand"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                        placeholder="Adresse mail" required>
+                    <small *ngIf="inscriptionForm.get('email')?.invalid && inscriptionForm.get('email')?.touched"
+                        class="text-red-500">
+                        Email requis.
+                    </small>
+
                 </div>
                 <div class="col-span-6 sm:col-span-3">
                     <label for="profession" class="text-sm font-medium text-gray-900 block mb-2">Profession</label>
-                    <input type="text" name="profession" id="profession" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Preofession" required>
+                    <input formControlName="profession" type="text" name="profession" id="profession"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                        placeholder="Preofession" required>
+                    <small *ngIf="inscriptionForm.get('profession')?.invalid && inscriptionForm.get('profession')?.touched"
+                        class="text-red-500">
+                        Profession requise .
+                    </small>
+
                 </div>
                 <div class="col-span-6 sm:col-span-3">
                     <label for="motDePass" class="text-sm font-medium text-gray-900 block mb-2">Mot de pass</label>
-                    <input type="password" name="motDePass" id="motDePass" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Mot de pass" required>
+                    <input formControlName="motDePass" type="password" name="motDePass" id="motDePass"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                        placeholder="Mot de pass" required>
+                    <small *ngIf="inscriptionForm.get('motDePass')?.invalid && inscriptionForm.get('motDePass')?.touched"
+                        class="text-red-500">
+                        motDePass requis (minimum 2 caractères).
+                    </small>
+
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="confirmMotDePass" class="text-sm font-medium text-gray-900 block mb-2">Confirmez le mot de pass</label>
-                    <input type="password" name="confirmMotDePass" id="confirmMotDePass" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Confirmez le mot de pass" required>
+                    <label for="motDePass_confirmation" class="text-sm font-medium text-gray-900 block mb-2">Confirmez le mot
+                        de pass</label>
+                    <input formControlName="motDePass_confirmation" type="password" name="motDePass_confirmation"
+                        id="motDePass_confirmation"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                        placeholder="Confirmez le mot de pass" required>
+                    <small *ngIf="inscriptionForm.get('motDePass_confirmation')?.invalid && inscriptionForm.get('motDePass_confirmation')?.touched"
+                        class="text-red-500">
+                        motDePass_confirmation requis (minimum 2 caractères).
+                    </small>
+
                 </div>
-             
+
+            </div>
+            <div class="p-6 border-t border-gray-200 rounded-b">
+                <button
+                type="submit"
+                class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 mt-4"
+                [disabled]="inscriptionForm.invalid"
+              >
+                Inscription
+              </button>
             </div>
         </form>
     </div>
 
-    <div class="p-6 border-t border-gray-200 rounded-b">
-        <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit">Inscription</button>
-    </div>
 
 </div>

@@ -3,6 +3,7 @@ import { MainContentComponent } from "./components/layout/main-content/main-cont
 import { LoginFormComponent } from "./components/auth/login-form/login-form.component";
 import { RegisterFormComponent } from "./components/auth/register-form/register-form.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { UserListComponent } from "./components/user-list/user-list.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:"register",
     component:RegisterFormComponent
+  },
+  {
+    path:"user",
+    component:UserListComponent
   },
   {
     path:"**",

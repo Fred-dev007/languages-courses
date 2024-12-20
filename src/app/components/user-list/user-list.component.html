@@ -1,0 +1,38 @@
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-4">Gestion des utilisateurs</h2>
+
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+            <thead>
+              <tr class="bg-gray-200 text-gray-700">
+                <th class="px-4 py-3 text-left text-sm font-semibold uppercase">ID</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold uppercase">Nom</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold uppercase">Prénom</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold uppercase">Email</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold uppercase">Profession</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold uppercase">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody" class="divide-y divide-gray-200">
+              <tr *ngFor="let user of users" class="hover:bg-gray-50">
+                <td class="px-4 py-2 text-sm text-gray-700">{{ user.id }}</td>
+                <td class="px-4 py-2 text-sm text-gray-700">{{ user.nom }}</td>
+                <td class="px-4 py-2 text-sm text-gray-700">{{ user.prenom }}</td>
+                <td class="px-4 py-2 text-sm text-gray-700">{{ user.email }}</td>
+                <td class="px-4 py-2 text-sm text-gray-700">{{ user.profession }}</td>
+                <td class="px-4 py-2 text-sm">
+                  <div class="flex space-x-2">
+                    <button class="px-3 py-1 text-sm font-medium text-white bg-green-500 rounded-lg shadow hover:bg-green-600">
+                      Modifier
+                    </button>
+                    <button (click)="delete(user)" class="px-3 py-1 text-sm font-medium text-white bg-red-500 rounded-lg shadow hover:bg-red-600">
+                      Supprimer
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+</div>
